@@ -1,0 +1,115 @@
+@font-face{
+    font-family: 'LetterGothicStd';
+    src: url('../fonts/LetterGothicStd.otf');
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: 'LetterGothicStd';
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+/*Opmaak achtergrond afbeeldingen */ 
+body.dusk {
+    background-image: url("../images/dusk.jpg");
+}
+
+body.day {
+  background-image: url("../images/day.jpg");
+}
+
+body.sunset {
+    background-image: url("../images/sunset.jpg");
+}
+
+body.night {
+    background-image: url("../images/night.jpg");
+}
+
+.container{
+    min-height: 100%;
+    min-width: 55%;
+    margin: 130px auto;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#circle, #circle2, #circle3, #circle4{
+    position: relative;
+    background: linear-gradient(to top right, yellow 40%, #FFFF99 100%);;
+    margin: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 1px 0 40px #ff0;
+}
+
+#circle2{
+    background: red;
+    /* background: linear-gradient(to top right, orangered 40%, yellow 100%); */
+}
+
+#circle3{
+    background: green;
+    /* background: linear-gradient(to top right, orangered 40%, yellow 100%); */
+}
+
+#circle4{
+    background: orangered;
+    /* background: linear-gradient(to top right, orangered 40%, yellow 100%); */
+}
+
+.clock {
+    font-size: 300%;
+  }
+
+#data{
+    font-size: 100%;
+}
+
+.tekst{
+    font-size: 400%;
+}
+
+/*iPad*/
+@media only screen and (min-width: 768px) { 
+    .clock{
+        font-size: 400%;
+    }
+
+    #data{
+        font-size: 200%;
+    }
+}
+
+/*MacBook*/
+@media only screen and (min-width: 1200px) {
+    .clock{
+        font-size: 500%;
+    }
+
+    #data{
+        font-size: 300%;
+    }
+}
+
+/*iMac*/
+@media all and (min-width: 1400px) {
+    .clock{
+        font-size: 800%;
+    }
+
+    #data{
+        font-size: 600%;
+    }
+}
