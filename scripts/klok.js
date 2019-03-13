@@ -1,10 +1,8 @@
-function clock() {// We create a new Date object and assign it to a variable called "time".
+function clock() {
   var time = new Date(),
-    
-  // Access the "getHours" method on the Date object with the dot accessor.
+
   hours = time.getHours(),
   
-  // Access the "getMinutes" method with the dot accessor.
   minutes = time.getMinutes(),
   
   seconds = time.getSeconds();
@@ -18,54 +16,103 @@ function clock() {// We create a new Date object and assign it to a variable cal
     return standIn;
   }
 
-  // 
+  //Het jaartal opvragen
   document.getElementById('data').innerHTML = time.getFullYear();
 }
 
-//
 function changeBackground () {
   var hours = new Date().getHours();
   var tlm = new TimelineMax();
 
-	if (hours >= 6 && hours <= 12) {
+	if (hours >= 5 && hours < 12) {
     document.body.className = "dusk"; //dusk.jpg
-    document.getElementById("tekst").innerHTML = "Goedemorgen! Tijd om op te staan."; //text onder de klok 
-    tlm.set("#circle", {visibility: "hidden"});
+    document.getElementById("tekst").innerHTML = "Goedemorgen! Tijd om op te staan."; //tekst onder de klok 
+    tlm.set("#circle", {visibility: "hidden"}); 
     tlm.set("#circle2", {visibility: "visible"});
     tlm.set("#circle3", {visibility: "hidden"});
     tlm.set("#circle4", {visibility: "hidden"});
+    tlm.add( TweenMax.from("#circle2", 10, { //Onder elkaar gezet omdat ik het zo overzichtelijker vind welke elementen ik heb. Verder zijn alle animaties bij elke tijd hetzelfde.
+      y:500,
+      opacity:0,  
+      ease:Circ.easeOut,
+      rotation:720,
+    }));
+    tlm.add( TweenMax.to("#circle2", 5, {
+      y:60, 
+      x:50,
+      scale:1.5, 
+      ease:Back.easeOut,
+      rotation:180,
+    }));
 	}
 
-	else if (hours >= 13 && hours <= 17) { 
+	else if (hours >= 12 && hours < 17) { 
     document.body.className = "day"; //day.jpg
     document.getElementById("tekst").innerHTML = "Fijne middag! Ga wat leuks doen.";
     tlm.set("#circle", {visibility: "visible"});
     tlm.set("#circle2", {visibility: "hidden"});
     tlm.set("#circle3", {visibility: "hidden"});
     tlm.set("#circle4", {visibility: "hidden"});
+    tlm.add( TweenMax.from("#circle", 10, { 
+      y:500,
+      opacity:0,  
+      ease:Circ.easeOut,
+      rotation:720,
+    }));
+    tlm.add( TweenMax.to("#circle", 5, {
+      y:60, 
+      x:50,
+      scale:1.5, 
+      ease:Back.easeOut,
+      rotation:180,
+    }));
   }
 
-  else if (hours >= 18 && hours <= 24) { 
+  else if (hours >= 17 && hours < 24) { 
     document.body.className = "sunset"; //sunset.jpg
-    document.getElementById("tekst").innerHTML = "Het is al bijna tijd om te gaan slapen..";
+    document.getElementById("tekst").innerHTML = "Het is bijna tijd om te gaan slapen..";
     tlm.set("#circle", {visibility: "hidden"});
     tlm.set("#circle2", {visibility: "hidden"});
     tlm.set("#circle3", {visibility: "visible"});
     tlm.set("#circle4", {visibility: "hidden"});
+    tlm.add( TweenMax.from("#circle3", 10, { 
+      y:500,
+      opacity:0,  
+      ease:Circ.easeOut,
+      rotation:720,
+    }));
+    tlm.add( TweenMax.to("#circle3", 5, {
+      y:60, 
+      x:50,
+      scale:1.5, 
+      ease:Back.easeOut,
+      rotation:180,
+    }));
   }
 
-  else if (hours >= 0 && hours <= 5) { 
+  else if (hours >= 0 && hours < 5) { 
 		document.body.className = "night"; //night.jpg
     document.getElementById("tekst").innerHTML = "Tijd om te slapen.";
     tlm.set("#circle", {visibility: "hidden"});
     tlm.set("#circle2", {visibility: "hidden"});
     tlm.set("#circle3", {visibility: "hidden"});
     tlm.set("#circle4", {visibility: "visible"});
+    tlm.add( TweenMax.from("#circle4", 10, { 
+      y:500,
+      opacity:0,  
+      ease:Circ.easeOut,
+      rotation:720,
+    }));
+    tlm.add( TweenMax.to("#circle4", 5, {
+      y:60, 
+      x:50,
+      scale:1.5, 
+      ease:Back.easeOut,
+      rotation:180,
+    }));
   }
-
-
 }
-// iit 
+ 
 setInterval(clock, 1000);
 
   changeBackground();

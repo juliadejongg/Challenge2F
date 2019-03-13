@@ -49,14 +49,14 @@ body.night {
     top: 0;
     background: linear-gradient(to top right, yellow 20%, rgb(248, 248, 206) 100%);
     margin: 30px;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     box-shadow: 2px 0 40px #ff0;
 }
 
 #circle2{
-    background: linear-gradient(to top right, white 20%, yellow 100%);
+    background: linear-gradient(to top right, rgb(247, 250, 212) 20%, yellow 100%);
 }
 
 #circle3{
@@ -81,6 +81,7 @@ body.night {
     font-size: 400%;
 }
 
+/* Toch de site nog responsive kunnen maken door de grootte van de cirkels aan te passen  */
 /*iPad*/
 @media only screen and (min-width: 768px) { 
     .clock{
@@ -89,6 +90,11 @@ body.night {
 
     #data{
         font-size: 200%;
+    }
+
+    #circle, #circle2, #circle3, #circle4{
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -101,15 +107,29 @@ body.night {
     #data{
         font-size: 300%;
     }
+
+    #circle, #circle2, #circle3, #circle4{
+        width: 100px;
+        height: 100px;
+    }
 }
 
 /*iMac*/
 @media all and (min-width: 1400px) {
+
+    .container{
+        margin: 600px auto;
+    }
     .clock{
         font-size: 800%;
     }
 
     #data{
         font-size: 600%;
+    }
+
+    #circle, #circle2, #circle3, #circle4{
+        width: 200px;
+        height: 200px;
     }
 }
