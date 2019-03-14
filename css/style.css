@@ -25,7 +25,7 @@ body.day {
 }
 
 body.sunset {
-    background-image: url("../images/sunset.jpg");
+    background-image: url("../images/sunset2.jpg");
 }
 
 body.night {
@@ -42,10 +42,9 @@ body.night {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.25);
 }
 
-#circle, #circle2, #circle3, #circle4{
+.planet{
     position: absolute;
     top: 0;
     background: linear-gradient(to top right, yellow 20%, rgb(248, 248, 206) 100%);
@@ -55,6 +54,8 @@ body.night {
     border-radius: 50%;
     box-shadow: 2px 0 40px #ff0;
 }
+
+/* Feedback: code korter maken wanneer kan, bijv. een dezelfde class geven */
 
 #circle2{
     background: linear-gradient(to top right, rgb(247, 250, 212) 20%, yellow 100%);
