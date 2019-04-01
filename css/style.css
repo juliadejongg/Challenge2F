@@ -55,8 +55,6 @@ body.night {
     box-shadow: 2px 0 40px #ff0;
 }
 
-/* Feedback: code korter maken wanneer kan, bijv. een dezelfde class geven */
-
 #circle2{
     background: linear-gradient(to top right, rgb(247, 250, 212) 20%, yellow 100%);
 }

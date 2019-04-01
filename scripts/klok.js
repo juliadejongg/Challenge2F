@@ -116,5 +116,3 @@ function changeBackground () {
 setInterval(clock, 1000);
 
   changeBackground();
-
-  //Feedback: code korter maken wanneer kan 
